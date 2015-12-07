@@ -1,0 +1,25 @@
+{
+  "name": "bluffyonline",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.js",
+  "dependencies": {
+    "express": "^4.13.3",
+    "body-parser": "^1.14.1",
+    "httpdispatcher": "^0.4.0"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/diegopinate/CS575-BluffyOnline.git"
+  },
+  "author": "Diego Pinate",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/diegopinate/CS575-BluffyOnline/issues"
+  },
+  "homepage": "https://github.com/diegopinate/CS575-BluffyOnline#readme"
+}
