@@ -1,0 +1,53 @@
+<body ng-controller="mainController">
+<div class="mainDiv">
+    <div class="homeDiv">
+        <div>
+            <h1>
+                Welcome to Bluffy Online
+            </h1>
+        </div>
+        <span ng-if="onSignUp == false">
+            <div>Please log in.</div>
+            <br/>
+            <div>
+            <form action="/login" method="post">
+                <label for="username">Username:</label>
+                <br/>
+                <input type="text" name="username" focus/>
+                <br/>
+                <label for="password">Password:</label>
+                <br/>
+                <input type="password" name="password"/>
+                <br/>
+                <input type="submit" value="Login">
+                </input>
+            </form>
+            </div>
+            <div>
+                Not a member? <a ng-click="showSignUp(true)">Sign up!</a>
+            </div>
+        </span>
+        <div>
+            <span ng-if="onSignUp == true">
+                <div>Sign Up:</div>
+                <label>Username:</label>
+                <br/>
+                <input type="text" name="sign_username" focus data-ng-model="signup.username"/>
+                <br/>
+                <label>Password:</label>
+                <br/>
+                <input type="password" name="sign_password" data-ng-model="signup.pwd"/>
+                <br/>
+                <label>Confirm password:</label>
+                <br/>
+                <input type="password" name="sign_confpassword" data-ng-model="signup.cpwd"/>
+                <br/>
+                <button ng-click="signUp()">Sign Up!</button>
+                <div>
+                    Already a member? <a ng-click="showSignUp(false)">Log in!</a>
+                </div>
+            </span>
+        </div>
+    </div>
+</div>
+</body>

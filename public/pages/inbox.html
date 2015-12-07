@@ -1,0 +1,106 @@
+<body>
+<div class="inboxMainDiv" ng-controller="mainController">
+    <div ng-init="loadInbox()" id="inboxContainer">
+        <span ng-if="userLogged">
+            <div class="inboxHeader">
+                <h2>
+                    Inbox
+                </h2>
+            </div>
+            <div class="inboxTableDiv">
+                <table class="inboxTable">
+                    <tr>
+                        <th>Sender</th>
+                        <th>Subject</th>
+                    </tr>
+                </table>
+                <div class="inboxDataDiv">
+                    <table class="inboxTable">
+                        <tr ng-repeat="msg in inbox" ng-click="loadMessage($index)">
+                            <td>{{msg.sender}}</td>
+                            <td>{{msg.subject}}</td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+
+            <div class="messageDiv">
+                <span ng-if="openedMessage != -1">
+                <div>
+                    <table class="messageTable">
+                        <thead>
+                        <tr>
+                            <th>Sender</th>
+                            <td>{{getMessage().sender}}</td>
+                        </tr>
+                        <tr>
+                            <th>Subject</th>
+                            <td>{{getMessage().subject}}</td>
+                        </tr>
+                        <tr>
+                            <th>Date</th>
+                            <td>{{getMessage().date}}</td>
+                        </tr>
+                        <tr>
+                            <th>Time</th>
+                            <td>{{getMessage().time}}</td>
+                        </tr>
+                        <tr>
+                            <th>Message</th>
+                            <td>{{getMessage().message}}</td>
+                        </tr>
+                        <tr>
+                        </thead>
+                    </table>
+                    <button ng-click="clearOpenedMessage()">Close message</button>
+                    <button ng-click="deleteMessage()">Delete</button>
+                </div>
+                </span>
+            </div>
+
+            <div class="messageWriterDiv">
+                <h4>
+                    Compose message
+                </h4>
+                <form action="/send_message" method="post">
+                     <!-- onsubmit="this.submit(); this.reset(); return false;">-->
+                    <table class="messageFormTable">
+                        <tr>
+                            <th>
+                                <label for="recipient">Recipient:</label>
+                            </th>
+                            <td>
+                                <input type="text" name="recipient" focus/>
+                            </td>
+                        </tr>
+                        <tr>
+                            <th>
+                                <label for="subject">Subject:</label>
+                            </th>
+                            <td>
+                                <input type="text" name="subject"/>
+                            </td>
+                        </tr>
+                        <tr>
+                            <th>
+                                <label for="message">Message:</label>
+                            </th>
+                            <td>
+                                <textarea class="messageInputBox" type="text" name="message"></textarea>
+                            </td>
+                        </tr>
+                        <tr>
+                            <th>
+                                <input type="submit" value="Send">
+                                </input>
+                            </th>
+                        </tr>
+                    </table>
+                </form>
+            </div>
+
+        </span>
+    </div>
+</div>
+</body>
+

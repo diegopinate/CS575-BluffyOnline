@@ -1,0 +1,24 @@
+<body ng-controller="communityController">
+<div class="communityDiv">
+    <h1>
+        Community
+    </h1>
+    <h4>
+        All players in the site
+    </h4>
+    <div ng-init="getUsers()">
+    <span ng-if="!users.empty()">
+        <table class="communityTable">
+            <tr>
+                <th>User</th>
+                <th>Prestige</th>
+            </tr>
+            <tr ng-repeat="u in users">
+                <td>{{u.username}}</td>
+                <td>{{u.prestige}}</td>
+            </tr>
+        </table>
+    </span>
+    </div>
+</div>
+</body>

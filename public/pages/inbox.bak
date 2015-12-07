@@ -1,0 +1,61 @@
+<body>
+<div class="mainDiv" ng-controller="mainController">
+    <div ng-init="loadInbox()">
+        <span ng-if="userLogged">
+        <h1>
+            Inbox
+        </h1>
+            <table id="inboxTable">
+                <tr>
+                    <th></th>
+                    <th>Sender</th>
+                    <th>Subject</th>
+                    <th>Date</th>
+                    <th>Time</th>
+                </tr>
+                <tr ng-repeat="msg in inbox">
+                    <td><button ng-click="loadMessage($index)">Open</button></td>
+                    <td>{{msg.sender}}</td>
+                    <td>{{msg.subject}}</td>
+                    <td>{{msg.date}}</td>
+                    <td>{{msg.time}}</td>
+                </tr>
+            </table>
+
+            <br/>
+
+            <span ng-if="openedMessage != -1">
+                <div>
+                <table id="messageTable">
+                    <thead>
+                    <tr>
+                        <th>Sender</th>
+                        <td>{{inbox[openedMessage].sender}}</td>
+                    </tr>
+                    <tr>
+                        <th>Subject</th>
+                        <td>{{inbox[openedMessage].subject}}</td>
+                    </tr>
+                    <tr>
+                        <th>Date</th>
+                        <td>{{inbox[openedMessage].date}}</td>
+                    </tr>
+                    <tr>
+                        <th>Time</th>
+                        <td>{{inbox[openedMessage].time}}</td>
+                    </tr>
+                    <tr>
+                        <th>Message</th>
+                        <td>{{inbox[openedMessage].message}}</td>
+                    </tr>
+                    <tr>
+                    </thead>
+                </table>
+                <button ng-click="clearOpenedMessage()">Close message</button>
+                </div>
+            </span>
+
+        </span>
+    </div>
+</div>
+</body>

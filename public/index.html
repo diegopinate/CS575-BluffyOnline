@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html ng-app="shooterApp">
+    <head>
+        <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
+
+        <link rel="stylesheet" type="text/css" href="index.css">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap-theme.min.css" integrity="sha384-fLW2N01lMqjakBkx3l/M9EahuwpSfeNvV63J5ezn3uZzapT0u7EYsXMjQV+0En5r" crossorigin="anonymous">
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js" integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS" crossorigin="anonymous"></script>
+
+        <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.25/angular.min.js"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.25/angular-route.js"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.25/angular-resource.js"></script>
+        <script src="script.js"></script>
+        <script src="pages/login.js"></script>
+        <script src="pages/game.js"></script>
+
+        <title>Bluffy Online</title>
+    </head>
+    <body ng-controller="mainController">
+
+        <header>
+        <nav class="navbar navbar-default">
+        <div class="container">
+            <div class="navi" ng-controller="mainController">
+                <ul class="nav navbar-nav navbar-top">
+                    <li><a href="/">Home</a></li>
+                    <li><a href="#profile">Profile</a></li>
+                    <li><a href="#inbox">Inbox</a></li>
+                    <li><a href="#game">Game</a></li>
+                    <li><a href="#community">Community</a></li>
+                </ul>
+            </div>
+        </div>
+        </nav>
+        </header>
+
+        <!-- MAIN CONTENT AND INJECTED VIEWS -->
+        <div id="main">
+            <div ng-view></div>
+        </div>
+    </body>
+</html>
+
