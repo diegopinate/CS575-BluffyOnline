@@ -1,0 +1,26 @@
+Bluffy Online
+By Diego Pinate
+CS-575 Final Project
+
+To be able to run the Node application, a PostgreSQL Database should be running and connected to the app via a connectionString. The app.js file currently has the information of my PostgreSQL DB, but if you want to run this project, here's the format of the PostgreSQL Database:
+
+Tables:
+-users
+-messages
+
+users:
+Contains all the information of the players
+Format:
+[username: text, password: text, friends: text, prestige: integer]
+
+messages:
+Contains all data of all messages sent by players
+Format:
+[id: int, sender: text, receiver: text, subject: text, message: text, time: time/hour, date: date]
+
+
+Also, the GAME SERVER application should be running as well on the same machine running the Node application. The server can be found in the server/ folder. It can be run by using the command:
+
+python3 server.py
+
+Python 3, websockets and asyncio is required. The installation of websockets can be found in: server/WebSocket/
